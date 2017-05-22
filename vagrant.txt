@@ -1,0 +1,41 @@
+#Vagrant
+
+#####devel######
+yum install devel
+
+#Vagrant Download & Install
+wget https://release.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.rpm
+yum install vagrant_1.9.1_x86_64.rpm
+
+#Vagrant Box Download
+vagrant box add centos https://github.com/holms/vagrant-jessie-box/releases/download/Jessie-v0.1/Debian-jessie-amd64-netboot.box
+
+#Vagrant Box create
+vagrant init Slim/kali-linux-2.0-amd64
+
+#Vagranfile Comment 
+Vagrantfile 
+	config.vm.network "private_network", ip: "192.168.33.10"
+	config.vm.provider "virtualbox" do |vb|
+	vb.gui = true
+      end
+
+#Vagrant Boot
+vagrant up --provider virualbox
+
+#Vagrant SSH
+vagrant ssh
+
+vagrant list
+vagrant status
+vagrant global-status
+
+#Vagrant Stop & Delete
+vagrant halt
+vagrant destroy
+
+#Plugin
+vagrant plugin list
+vagrant plugin
+
+
